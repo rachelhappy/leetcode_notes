@@ -7,7 +7,8 @@ class Solution:
             visited = set(starts)      #此处不需要定义starts吗  starts是输入变量
             while q:
                 x,y = q.popleft()
-                for nx,ny in ((x,y+1),(x,y-1),(x+1,y),(x-1,y)):  #上下左右
+                for nx,ny in ((x,y+1),(x,y-1),(x+1,y),(x-1,y)):  #上下左右    为什么坐标不用list表示？list 不使用 hash 值进行索引，故其对所存储元素没有可哈希的要求；set / dict 使用 hash 值进行索引，也即其要求欲存储的元素有可哈希的要求。Python不支持dict的key为list或dict类型，因为list和dict类型是unhashable（不可哈希）的。
+
                     if 0 <= nx <m and 0 <= ny <n and  heights[x][y] <= heights[nx][ny] and (nx,ny) not in visited:     #限定nx和ny的边界范围,以及题目的特殊条件，当前节点的值小于等于周围节点,以及不在当前list里
                         q.append((nx,ny))   #list和deque用append添加新元素
                         visited.add((nx,ny))     #set 用add添加新元素,添加重复的数进去，set不会更新
