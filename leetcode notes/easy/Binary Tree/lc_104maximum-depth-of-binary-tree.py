@@ -18,4 +18,4 @@ class Solution:
         self.curdep(root.right,height+1)  #root.right前面为什么不加self？ 是否是调用函数就不用self了呢？否
 
         #为什么两个def是平行的？答：此题可以写成平行，或者写放在第一个def下，不用self
-        #self问题统一解答：因为再一个class里面def(self,)和self.意味着跟这个函数和变量都是在同一个class下可以被调用的，缺一不可
+        #self问题统一解答：因为在一个class里面def(self,)和self.意味着跟这个函数和变量都是在同一个class下可以被调用的，缺一不可
